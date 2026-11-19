@@ -1,5 +1,7 @@
 # Alfred Q
 
+![Alfred Q icon](icon.png)
+
 Ask OpenAI a quick question from Alfred and read the answer in a compact, dismissable Alfred 6 UI.
 
 ## Install

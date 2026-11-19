@@ -232,7 +232,7 @@ The model is entirely configurable and is never fixed in the script.</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.1.1</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/mustaphahamoui/alfredq</string>
 </dict>
