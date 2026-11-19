@@ -1,9 +1,12 @@
 {
   "bundleid": "com.mustaphahamoui.alfredq.answer",
-  "log": { "level": "info", "internal": true },
   "variablesconfig": {
     "question": { "src": "args[0]" },
-    "openai_model": { "src": "variable" }
+    "openai_api_key": { "src": "variable", "scriptenv": true },
+    "openai_model": { "src": "variable", "scriptenv": true },
+    "openai_instructions": { "src": "variable", "scriptenv": true },
+    "max_output_tokens": { "src": "variable", "scriptenv": true },
+    "request_timeout": { "src": "variable", "scriptenv": true }
   },
   "window": {
     "movablebybackground": true,
