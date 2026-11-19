@@ -1,0 +1,80 @@
+{
+  "bundleid": "com.mustaphahamoui.alfredq.answer",
+  "log": { "level": "info", "internal": true },
+  "variablesconfig": {
+    "question": { "src": "args[0]" },
+    "openai_model": { "src": "variable" }
+  },
+  "window": {
+    "movablebybackground": true,
+    "resizeable": true,
+    "size": { "width": 760, "height": 150 },
+    "minsize": { "width": 560, "height": 130 },
+    "maxsize": { "width": 920, "height": 560 },
+    "padding": 14,
+    "root": {
+      "type": "view",
+      "layout": "border",
+      "spacing": 10,
+      "events": [
+        {
+          "triggers": "preload",
+          "action": {
+            "type": "script",
+            "src": "ask.js",
+            "args": "{var:question}",
+            "async": true
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "answer",
+          "type": "markdownarea",
+          "text": "Asking OpenAI…",
+          "background": null,
+          "paragraphspacing": 10,
+          "listspacing": 5,
+          "constraints": {
+            "region": "centre",
+            "size": { "width": 720 }
+          },
+          "behaviour": { "scroll": "start" }
+        },
+        {
+          "constraints": { "region": "bottom" },
+          "type": "view",
+          "layout": "border",
+          "components": [
+            {
+              "id": "status",
+              "type": "label",
+              "text": "{var:openai_model} · Asking…",
+              "colour": "secondaryLabelColor",
+              "constraints": { "region": "left", "position": "left" }
+            },
+            {
+              "id": "copyButton",
+              "type": "button",
+              "text": "Copy",
+              "shortcut": "⌘C",
+              "tooltip": "Copy answer",
+              "enabled": false,
+              "constraints": { "region": "right", "position": "right" },
+              "events": [
+                {
+                  "triggers": "actioned",
+                  "action": {
+                    "type": "json",
+                    "variables": { "answerText": "{value:answer.text}" },
+                    "src": { "copy": { "type": "text", "src": "{var:answerText}" } }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

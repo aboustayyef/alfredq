@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mustaphahamoui.alfredq</string>
+	<key>connections</key>
+	<dict>
+		<key>2C93813B-35B0-4A5F-83A7-A2298C61EDB5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91E2A1C8-3B85-41E7-B706-BE3520A92269</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mustapha Hamoui</string>
+	<key>description</key>
+	<string>Ask OpenAI a quick question from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Alfred Q</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>{var:workflow_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Ask OpenAI and show the answer in Alfred</string>
+				<key>text</key>
+				<string>Ask OpenAI</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C93813B-35B0-4A5F-83A7-A2298C61EDB5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>launchmode</key>
+				<integer>0</integer>
+				<key>path</key>
+				<string>answer.alfredui</string>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.alfredui</string>
+			<key>uid</key>
+			<string>91E2A1C8-3B85-41E7-B706-BE3520A92269</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Setup
+
+Enter your OpenAI API key and model ID in the fields on the right.
+
+Create an API key at https://platform.openai.com/api-keys. API usage is billed separately from a ChatGPT subscription.
+
+## Usage
+
+Open Alfred and type `q`, a space, and your question. Press Return. The answer appears in an Alfred Text View; press Escape to dismiss it.
+
+The answer is shown in a compact Alfred 6 UI which expands for longer responses, up to a scrollable maximum height. Press Escape to dismiss it or Command-C to copy the full answer.
+
+The model is entirely configurable and is never fixed in the script.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2C93813B-35B0-4A5F-83A7-A2298C61EDB5</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>91E2A1C8-3B85-41E7-B706-BE3520A92269</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>sk-…</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Create one at https://platform.openai.com/api-keys</string>
+			<key>label</key>
+			<string>OpenAI API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>openai_api_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>e.g. gpt-6.2-sol</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Enter any model ID available to your OpenAI API account</string>
+			<key>label</key>
+			<string>Model</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>openai_model</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>q</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword used to ask a question</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>workflow_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Answer clearly and concisely. Use Markdown when it improves readability.</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Optional behavior and style guidance</string>
+			<key>label</key>
+			<string>Instructions</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>openai_instructions</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>1200</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Maximum output tokens; use 0 for the model default</string>
+			<key>label</key>
+			<string>Maximum Output Tokens</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>max_output_tokens</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>60</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Stop waiting after this many seconds</string>
+			<key>label</key>
+			<string>Request Timeout</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>request_timeout</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.1.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/mustaphahamoui/alfredq</string>
+</dict>
+</plist>

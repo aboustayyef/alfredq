@@ -1,0 +1,33 @@
+# Alfred Q
+
+Ask OpenAI a quick question from Alfred and read the answer in a compact, dismissable Alfred 6 UI.
+
+## Install
+
+1. Double-click `Alfred Q.alfredworkflow`.
+2. Enter your OpenAI API key.
+3. Enter the OpenAI model ID you want to use. The workflow does not hard-code a model.
+4. Import the workflow.
+
+## Use
+
+Open Alfred and type:
+
+```text
+q Why is the sky blue?
+```
+
+Press Return. Press Escape to dismiss the answer window.
+
+The window grows with the answer up to a capped height, after which the Markdown response scrolls. Press Command-C or the Copy button to copy the full answer.
+
+The question is required in normal use; entering only `q` opens the answer view with a short usage reminder.
+
+The keyword, model, instructions, output limit, and timeout can all be changed via **Configure Workflow…**.
+
+## Requirements
+
+- Alfred 6 with the Powerpack
+- An OpenAI API key with billing enabled
+
+The workflow uses macOS's built-in JavaScript for Automation and `curl`, so it has no package dependencies.
