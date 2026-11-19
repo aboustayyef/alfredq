@@ -1,6 +1,6 @@
 # Alfred Q
 
-![Alfred Q icon](icon.png)
+<img src="icon.png" alt="Alfred Q icon" width="128">
 
 Ask OpenAI a quick question from Alfred and read the answer in a compact, dismissable Alfred 6 UI.
 
