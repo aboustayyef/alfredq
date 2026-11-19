@@ -19,7 +19,19 @@ Open Alfred and type:
 q Why is the sky blue?
 ```
 
-Press Return. Press Escape to dismiss the answer window.
+### Ask a question
+
+Type `q` followed by your question, then press Return.
+
+![Ask OpenAI from Alfred](images/question.png)
+
+### Read the answer
+
+The response appears in a compact native Alfred window with Markdown formatting.
+
+![OpenAI answer in Alfred](images/answer.png)
+
+Press Escape to dismiss the answer window.
 
 The window grows with the answer up to a capped height, after which the Markdown response scrolls. Press Command-C or the Copy button to copy the full answer.
 
