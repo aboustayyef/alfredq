@@ -4,9 +4,13 @@
 
 Ask OpenAI a quick question from Alfred and read the answer in a compact, dismissable Alfred 6 UI.
 
+## Download
+
+[Download the latest version](https://github.com/aboustayyef/alfredq/releases/latest/download/Alfred-Q.alfredworkflow)
+
 ## Install
 
-1. Double-click `Alfred Q.alfredworkflow`.
+1. Double-click `Alfred-Q.alfredworkflow`.
 2. Enter your OpenAI API key.
 3. Enter the OpenAI model ID you want to use. The workflow does not hard-code a model.
 4. Import the workflow.
